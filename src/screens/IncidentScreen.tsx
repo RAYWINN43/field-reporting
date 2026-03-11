@@ -19,7 +19,7 @@ import { LocationMap } from '../components/LocationMap';
 import { Coordinates, Incident  } from '../types';
 import { submitIncident } from '../services/api';
 
-export const JournalFormScreen: React.FC = () => {
+export const IncidentScreen: React.FC = () => {
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [location, setLocation] = useState<Coordinates | null>(null);
   const [description, setDescription] = useState('');
