@@ -22,7 +22,6 @@ import { submitIncident } from '../services/api';
 export const IncidentScreen: React.FC = () => {
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [location, setLocation] = useState<Coordinates | null>(null);
-  const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const addEventToCalendar = async () => {
@@ -77,7 +76,6 @@ export const IncidentScreen: React.FC = () => {
         Vibration.vibrate(300);
         await addEventToCalendar();
 
-        setDescription('');
         setPhotoUri(null);
         setLocation(null);
         
@@ -85,7 +83,7 @@ export const IncidentScreen: React.FC = () => {
         Alert.alert('Succès', 'Entrée sauvegardée avec succès.');
       }
     } catch (error) {
-      Alert.alert('Erreur', 'Erreur serveur simulée (HTTP 500).');
+      Alert.alert('Erreur', 'Erreur serveur (HTTP 500).');
     } finally {
       setIsSubmitting(false);
     }
