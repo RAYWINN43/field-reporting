@@ -10,9 +10,6 @@ const apiClient = axios.create({
   },
 });
 
-function AxiosPost<T>(url: string, data: any): Promise<T> {
-  return apiClient.post<T>(url, data).then((response) => response.data);
-}
 
 export const submitIncident = async (data: Incident): Promise<ApiResponse<Incident>> => {
   try {
