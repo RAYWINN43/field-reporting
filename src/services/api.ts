@@ -28,7 +28,4 @@ export const submitIncident = async (data: Incident): Promise<ApiResponse<Incide
       success: false,
     };
   }
-}
-
-
-export default apiClient;
+};
